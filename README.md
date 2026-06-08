@@ -13,7 +13,7 @@ Aims to enhance your experience when playing against bots offline or with friend
 4. Fixes most bot stuck issues
 5. Allows bots to buy everything and overhauls their economy management
 6. Refines bot behavior, allowing them to spray, flick, spam smokes and anti-flash
-7. Assigns each bot their own agent model, music kit and avatar
+7. Assigns each bot their own agent model, music kit, knife skin, gloves, avatar, and profile
 8. Makes bots smarter, more organized, and more alert to their surroundings
 9. Changes bot names to pro and random players. (the characteristics of each pro player are based on stats from [HLTV](https://www.hltv.org/))
 10. Removes the prefix from bot names
@@ -159,7 +159,7 @@ After modification, if you wanna **play with bots again**, navigate to `game/csg
 
 Add `-disable_workshop_command_filtering` to your launch options
 
-### How to disable agent skins and music kits
+### How to disable agent skins, music kits, knife skins, and gloves
 
 1. Open the root of CS2 and navigate to `game/csgo/addons/counterstrikesharp/plugins`  
 2. Rename the `BotRandomizer` folder to `BotRandomizer_disabled`
@@ -176,6 +176,8 @@ Run `sv_standable_normal 0.7` in your game console
 [CS2-Bot-NadeSystem](https://github.com/ed0ard/CS2-Bot-NadeSystem)  
 [CS2_ExecAfter_No_Admin](https://github.com/ed0ard/CS2_ExecAfter_No_Admin) forked from [kus](https://github.com/kus)  
 [CS2-Bot-Randomizer](https://github.com/ed0ard/CS2-Bot-Randomizer)  
+[CS2-Bot-Hider](https://github.com/XBribo/CS2-Bot-Hider) by [XBribo](https://github.com/XBribo)  
+[CSGOBetterBots](https://github.com/manicogaming/CSGOBetterBots/blob/master/addons/sourcemod/data/bot_info.json) by [manico](https://github.com/manicogaming)  
 [CS2-Smarter-Bot](https://github.com/ed0ard/CS2-Smarter-Bot)  
 [CS2-BotAI](https://github.com/ed0ard/CS2-BotAI) forked from [Austin](https://github.com/Austinbots)  
 [CS2-BotAI-for-Linux](https://github.com/Austinbots/CS2-BotAI)  
