@@ -1,0 +1,40 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <AssemblyName>BotInventory</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <BaseOutputPath>bin/</BaseOutputPath>
+    <OutputPath>$(BaseOutputPath)Release/plugins/Botinventory</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CounterStrikeSharp.API" Version="1.0.371" />
+  </ItemGroup>
+
+  <!--
+    Keep the editable Markdown sources culture-neutral on disk.
+    Names such as *.zh-CN.md / *.en-US.md can be interpreted by MSBuild as culture resources
+    and emitted into satellite resource assemblies. These neutral source names are embedded
+    directly into BotInventory.dll; runtime still publishes the user-facing files as
+    BotInventory.zh-CN.md and BotInventory.en-US.md next to BotInventory.json.
+  -->
+  <ItemGroup>
+    <EmbeddedResource Include="docs/BotInventory.Chinese.md">
+      <LogicalName>BotInventory.ConfigGuide.ChineseMarkdown</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="docs/BotInventory.English.md">
+      <LogicalName>BotInventory.ConfigGuide.EnglishMarkdown</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="Build">
+    <!-- BotInventory intentionally shares the upstream gamedata file and keys. -->
+    <Copy
+      SourceFiles="gamedata/inventory-simulator.json"
+      DestinationFolder="$(OutputPath)/../../gamedata"
+    />
+  </Target>
+</Project>
